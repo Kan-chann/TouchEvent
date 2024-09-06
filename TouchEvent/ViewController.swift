@@ -59,7 +59,6 @@ class ViewController: UIViewController ,PHPickerViewControllerDelegate{
         picker.delegate = self
             //ぴっかーを呼び出す
         present(picker, animated: true)
-     
     }
     @IBAction func save(){
         UIGraphicsBeginImageContextWithOptions(backgroundImageView.frame.size,false, 0.0)
@@ -78,11 +77,9 @@ class ViewController: UIViewController ,PHPickerViewControllerDelegate{
         imageViewArray.last!.removeFromSuperview()
         //スタンプを表示させるimageView配列の末尾を削除
         imageViewArray.removeLast()
-        
     }
     
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-        
         let itemProvider = results.first?.itemProvider
         //選択された画像を読み込む
         if let itemProvider, itemProvider.canLoadObject(ofClass: UIImage.self){
